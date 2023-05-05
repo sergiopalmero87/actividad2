@@ -1,4 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE biblioteca_documentos SYSTEM "requeriminento_1.dtd"[
+<!DOCTYPE biblioteca_documentos [
+    <!ELEMENT biblioteca_documentos (libro, revista, periodico)>
+    
+    <!ELEMENT libro (titulo*, capitulos, indice*, sinopsis)>
+    <!ATTLIST libro libro_id CDATA "L-0000" >
+    <!ATTLIST libro tipo_clase (novela | infantil | didáctico) #REQUIRED >
+    <!ATTLIST libro num_paginas_libro CDATA >
 
-]>
+    <!ELEMENT titulo (#PCDATA)>
+
+    <!ELEMENT capitulos (capitulo, contenido)>
+    
+    <!ELEMENT capitulo (titulo)>  
+    <!ATTLIST capitulo num_paginas_capitulo CDATA>  
+     
+    <!ELEMENT titulo (#PCDATA)>
+
+    <!ELEMENT contendio (#PCDATA)>
+    <!ATTLIST contenido enlace CDATA>
+
+    <!ELEMENT indice (#PCDATA)>
+    <!ELEMENT sinopsis (#PCDATA)>
+
+    <!ELEMENT revista (titulo, numero_revista, indice, seccion)>
+    <!ATTLIST revista revista_id ID "R" #REQUIRED>
+    <!ATTLIST revista tipo_clase (informática | corazón | coches | investigación | otras) #REQUIRED >
+    <!ATTLIST revista num_paginas_revista CDATA>
+
+    <!ELEMENT titulo (#PCDATA)>
+    <!ELEMENT numero_revista (#PCDATA)>
+    <!ELEMENT indice (#PCDATA)>
+
+    <!ELEMENT seccion (contenido)>
+    <!ATTLIST seccion num_paginas_seccion CDATA #REQUIRED>
+   
+    <!ELEMENT contenido (#PCDATA)>
+    <!ATTLIST contenido enlace CDATA>
+
+    <!ELEMENT periodico (seccion, indice, contenido)>
+    <!ATTLIST periodico periodico_id ID "P-0000" #REQUIRED>
+    <!ATTLIST periodico tipo_clase (nacionales | internacionales) #REQUIRED>
+    <!ATTLIST periodico fecha_publicacion CDATA>
+
+    <!ELEMENT seccion (articulos)>
+    <!ATTLIST seccion tipo_seccion (economica | opinion | deportes | nacional | internacional) #REQUIRED>
+
+    <!ELEMENT articulos (#PCDATA)>
+    <!ATTLIST articulos nombre_autor CDATA #REQUIRED>
+
+    <!ELEMENT indice (#PCDATA)>
+
+    <!ELEMENT contenido (#PCDATA)>
+    <!ATTLIST contenido enlace CDATA>
+
+]
+
+>
+<biblioteca_documentos>
+    <libros id= "L-0001" tipo_clase= "novela" num_paginas_libros= "100">
+        <titulo>Viaje a Egipto</titulo>
+        <capítulos>
+            <capítulo num_paginas_capitulo= "7">Nos vamos
+                <contenido enlace= "enlace">Primer capítulo de la novela</contenido>
+            </capítulo>
+
+            <capítulo num_paginas_capitulo= "8">La llegada
+                <contenido enlace= "enlace"> Segundo capítulo de la novela</contenido>
+            </capítulo>
+
+            <capítulo num_paginas_capitulo= "7">Primer día
+                <contenido enlace= "enlace"> Tercer capítulo de la novela</contenido>
+            </capítulo>
+
+            <capítulo num_paginas_capitulo= "8">Segundo día
+                <contenido enlace= "enlace"> Cuarto capítulo del libro</contenido>
+            </capítulo>
+
+            <capítulo num_paginas_capitulo= "8">Tercer día
+                <contenido enlace= "enlace"> Quinto capítulo del libro</contenido>
+            </capítulo>
+
+            <capítulo num_paginas_capitulo= "7">Cuarto día
+                <contenido enlace= "enlace"> sexto capítulo del libro</contenido>            
+            </capítulo>
+
+            <capítulo num_paginas_capitulo= "8">Hora de volver
+                <contenido enlace= "enlace"> Último capítulo del libro</contenido>          
+            </capítulo>
+        </capítulos>
+        <indice>Índice del libro</indice>
+        <sinopsis>Un viaje a Egipto</sinopsis>
+    </libros>
+
+    <revista revista_id="R" tipo_clase= "coche" num_paginas_revista= "35">
+        <titulo> La revista de los coches</titulo>
+        <numero_revista> 3</numero_revista>
+        <indice> Índice de la revista</indice>
+
+        <seccion num_paginas_seccion= "4">
+            <contenido enlace= "enlace">Este es el contenido de la sección.</contenido>
+        </seccion>
+    </revista>
+
+    <periodico periodico_id= "P-0001" tipo_clase= "nacional" fecha_publicacion= "5-5-2023">
+        <seccion tipo_seccion= "deportes">
+          <articulos nombre_autor= "Pepe"> Primer artículo</articulos> 
+        </seccion>
+        <indice>Índice del periódico</indice>
+        <contenido enlace= "enlace"> Contenido del periódico</contenido>
+    </periodico>
+
+</biblioteca_documentos>
