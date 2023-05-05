@@ -1,0 +1,101 @@
+<!ELEMENT biblioteca_documentos (libros, revistas, periodicos)>
+    
+    <!ELEMENT libros (titulo, capitulos, indice, sinopsis)>
+    <!ATTLIST libros libros_id CDATA "L-0000" >
+    <!ATTLIST libros tipo_clase (novela | infantil | didáctico) #REQUIRED >
+    <!ATTLIST libros num_paginas_libros CDATA >
+
+    <!ELEMENT titulo (#PCDATA)>
+
+    <!ELEMENT capitulos (titulo, contenido)>
+    <!ATTLIST capitulos num_pagina_capitulo  CDATA>
+
+    <!ELEMENT titulo (#PCDATA)>
+
+    <!ELEMENT contendio (#PCDATA)>
+    <!ATTLIST contenido enlace CDATA>
+
+    <!ELEMENT indice (#PCDATA)>
+    <!ELEMENT sinopsis (#PCDATA)>
+
+    <!ELEMENT revistas (titulo, numero_revista, indice, secciones)>
+    <!ATTLIST revistas revistas_id ID "R" #REQUIRED>
+    <!ATTLIST revistas tipo_clase (informática | corazón | coches | investigación | otras) #REQUIRED >
+    <!ATTLIST revistas num_paginas CDATA>
+
+    <!ELEMENT titulo (#PCDATA)>
+    <!ELEMENT nummero_revistas (#PCDATA)>
+    <!ELEMENT indice (#PCDATA)>
+
+    <!ELEMENT secciones (contenido)>
+    <!ATTLIST seccion num_paginas CDATA #REQUIRED>
+   
+    <!ELEMENT contenido (#PCDATA)>
+    <!ATTLIST contenido enlace CDATA>
+
+    <!ELEMENT periodicos (secciones, indice)>
+    <!ATTLIST periodicos periodicos_id ID "P-0000" #REQUIRED>
+    <!ATTLIST periodicos tipo_clase (nacionales | internacionales) #REQUIRED>
+    <!ATTLIST periodicos fecha_publicacion CDATA>
+
+    <!ELEMENT secciones (articulos)>
+    <!ATTLIST secciones tipo_seccion (economica | opinion | deportes | nacional | internacional) #REQUIRED>
+
+    <!ELEMENT articulos (#PCDATA)>
+    <!ATTLIST articulos nombre_autor CDATA #REQUIRED>
+
+    <!ELEMENT indice (#PCDATA)>
+
+    <!ELEMENT contenido (#PCDATA)>
+    <!ATTLIST contenido enlace CDATA>
+
+
+   
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Existen tres tipos de documentos almacenados en la biblioteca: libros, revistas y periódicos. 
+ Todos los documentos están identificados por el atributo Id.✅ 
+
+ Para los libros este atributo empieza con la letra “L” seguido de 4 dígitos identificativos.
+
+ Para los periódicos este atributo empieza por la letra “P” seguido de los 4 dígitos identificativos.
+
+ En el caso de las revistas empieza por la letra “R”.
+
+ Los libros a su vez son clasificados en novela, infantil o didáctico. ✅
+
+Cada libro contiene un atributo identificativo de su clase denominado tipo_clase. ✅
+Dentro de cada libro se tiene un título, varios capítulos con el título en su interior, un índice y una sinopsis. ✅
+Tanto en libro ✅como en capítulo existe un atributo que contiene el número de páginas del libro o del capítulo, según corresponda. ✅
+Cada capítulo contiene un elemento denominado contenido, en el que se tiene un atributo con el enlace a la información.
+
+ Las revistas a su vez son clasificadas en: informática, corazón, coches, investigación y otras. ✅
+
+Cada revista tiene el atributo tipo_clase identificativo de la clase a la que pertenece. 
+Dentro de cada revista tenemos el título, el número de la revista, un índice de contenido y las secciones. 
+En cada sección y en la revista se tiene un atributo que contiene el número de páginas. 
+Además, en cada sección se tiene la parte denominada contenido, en la que se tiene un atributo con un enlace a la información.
+
+ Los periódicos se clasifican en nacionales e internacionales. 
+
+Cada periódico contiene el atributo tipo_clase identificativo de la clase a la que pertenece y un atributo que incluye la fecha de publicación. 
+Dentro de los periódicos tenemos secciones y un índice. 
+Cada sección debe contener un atributo identificativo del tipo de sección, que puede ser: económica, opinión, deportes, nacional o internacional. 
+Las secciones se dividen en artículos, en donde se define en un atributo el autor. 
+Finalmente, el contenido será el último elemento del árbol, que necesita un atributo que referencie a la información.
+
+8. La información deberá de ir como nodo elemento a no ser que se especifique lo contrario 
+(como por ejemplo el id que se pide como nodo atributo). -->
