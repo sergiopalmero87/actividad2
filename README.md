@@ -32,16 +32,8 @@ Vamos a elaborar una estructura de base de datos en XML que permita almacenar lo
 
 -Validar el documento con alguna aplicación externa e incluir capturas de pantalla.
 
-**IMPORTANTE: Cada alumno propondrá una solución de XML y DTD. Una vez todos los alumnos hayan puesto todas sus soluciones, se cotejará con el resto para poner la solución final.**
-
-Valoración: 5 puntos sobre 10
-
 · Requerimiento 2
 
 Elaborar un XSD que permita validar el documento XML.
 
 Validar el documento con alguna aplicación externa e incluir capturas de pantalla.
-
-**IMPORTANTE: Cada alumno propondrá una solución de XML y XSD. Una vez todos los alumnos hayan puesto todas sus soluciones, se cotejará con el resto para poner la solución final.**
-
-Valoración: 5 puntos sobre 10
