@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>    
+<biblioteca_documentos xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+                        xsi:noNamespaceSchemaLocation= "biblioteca_documentos_2.xsd">
+
+    <Libro libro_id="L-0001" tipo_clase="novela" num_paginas="70">
+        <titulo> Viaje a Egipto</titulo>
+        <capitulos>
+            <capitulo>
+                <titulo>Nos vamos</titulo>
+            </capitulo>
+            <contenido enlace="enlace"/> 
+        </capitulos>
+        <indice>Indice del libro</indice>
+        <sinopsis>Sinopsis del libro</sinopsis>
+    </Libro>
+
+    <revista revista_id="R" tipo_clase="coches" numero_paginas="25">
+        <titulo>Revista de coches</titulo>
+        <numero_revista>3</numero_revista>
+        <indice>Indice de la revista</indice>
+        <seccion num_paginas_seccion="4">
+            <contenido enlace="enlace"/>
+        </seccion>
+    </revista>
+
+    <periodico periodico_id="P-0000" tipo_clase="nacional">
+        <seccion tipo_seccion="deportes">
+            <articulos nombre_autor="Sergio"/>
+        </seccion>
+        <indice> Indice del periódico</indice>
+        <contenido enlace="enlace"/>
+    </periodico>
+
+</biblioteca_documentos>
