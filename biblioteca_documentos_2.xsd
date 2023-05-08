@@ -10,7 +10,13 @@
                 <element name="Libro">
                     <complexType>
                         <sequence>
-                            <element name="titulo" type="string"></element>
+                            <element name="titulo">
+                                <simpleType>
+                                    <restriction base="string">
+                                        <maxLength value="25"></maxLength>
+                                    </restriction>
+                                </simpleType>
+                            </element>
                             <element name="capitulos">
                                 <complexType>
                                     <sequence>
@@ -42,7 +48,13 @@
                 <element name="revista">
                     <complexType>
                         <sequence>
-                            <element name="titulo" type="string"></element>
+                            <element name="titulo">
+                                <simpleType>
+                                    <restriction base="string"> 
+                                        <maxLength value="15"></maxLength>
+                                    </restriction>
+                                </simpleType>
+                            </element>
                             <element name="numero_revista" type="integer"></element>
                             <element name="indice" type="string"></element>
                             <element name="seccion" >
@@ -91,7 +103,6 @@
                 </element>
             </sequence>
         </complexType>
-    
     </element>
 
 

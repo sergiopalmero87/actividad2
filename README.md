@@ -34,6 +34,6 @@ Vamos a elaborar una estructura de base de datos en XML que permita almacenar lo
 
 · Requerimiento 2
 
-Elaborar un XSD que permita validar el documento XML.
+-Elaborar un XSD que permita validar el documento XML.
 
-Validar el documento con alguna aplicación externa e incluir capturas de pantalla.
+-Validar el documento con alguna aplicación externa e incluir capturas de pantalla.
