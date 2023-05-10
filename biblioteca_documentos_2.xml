@@ -15,7 +15,7 @@
     </Libro>
 
     <revista revista_id="R" tipo_clase="coches" numero_paginas="25">
-        <titulo>Revista de coches</titulo>
+        <titulo>Revista coches</titulo>
         <numero_revista>3</numero_revista>
         <indice>Indice de la revista</indice>
         <seccion num_paginas_seccion="4">
