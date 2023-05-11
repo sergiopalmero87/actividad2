@@ -7,7 +7,7 @@
     <element name="biblioteca_documentos">
         <complexType>
             <sequence>
-                <element name="Libro">
+                <element name="Libro" minOccurs="1" maxOccurs="unbounded">
                     <complexType>
                         <sequence>
                             <element name="titulo">
@@ -30,7 +30,6 @@
                                         </element>
                                         <element name="contenido">
                                             <complexType>
-                                                <sequence></sequence>
                                                 <attribute name="enlace" type="string"></attribute>
                                             </complexType>
                                         </element>
@@ -45,7 +44,7 @@
                         <attribute name="num_paginas" type="integer"></attribute>
                     </complexType>
                 </element>
-                <element name="revista">
+                <element name="revista" minOccurs="1" maxOccurs="unbounded">
                     <complexType>
                         <sequence>
                             <element name="titulo">
@@ -75,7 +74,7 @@
                         <attribute name="numero_paginas" type="integer"></attribute>
                     </complexType>
                 </element>
-                <element name="periodico">
+                <element name="periodico" minOccurs="1" maxOccurs="unbounded">
                     <complexType>
                         <sequence>
                             <element name="seccion">
@@ -98,7 +97,7 @@
                             </element>
                         </sequence>
                         <attribute name="periodico_id" type="string" default="P-0000"></attribute>
-                        <attribute name="tipo_clase" type="string" default="nacional"></attribute>
+                        <attribute name="tipo_clase" type="string" use="required"></attribute>
                     </complexType>
                 </element>
             </sequence>

@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Hago dtd interno porque externo no consigo que se conecte. Subo a gitihub también el externo para que quede constancia.
+Aun asi, este interno tampoco parece conectarse para validar el xml. No consigo ver el fallo -->
 <!DOCTYPE biblioteca_documentos [
-    <!ELEMENT biblioteca_documentos (libro, revista, periodico)>
+    <!ELEMENT biblioteca_documentos (libro+, revista+, periodico+)>
     
     <!ELEMENT libro (titulo*, capitulos, indice*, sinopsis)>
-    <!ATTLIST libro libro_id CDATA "L-0000" >
+    <!ATTLIST libro libro_id CDATA "L-0000"> <!-- No se porque no me deja que el type sea ID igual que en revista o periódico -->
     <!ATTLIST libro tipo_clase (novela | infantil | didáctico) #REQUIRED >
     <!ATTLIST libro num_paginas_libro CDATA >
 
@@ -53,11 +55,11 @@
     <!ELEMENT contenido (#PCDATA)>
     <!ATTLIST contenido enlace CDATA>
 
-]
+]>
 
->
+
 <biblioteca_documentos>
-    <libros id= "L-0001" tipo_clase= "novela" num_paginas_libros= "100">
+    <libro libro_id= "L-0001" tipo_clase= "novela" num_paginas_libro= "100">
         <titulo>Viaje a Egipto</titulo>
         <capítulos>
             <capítulo num_paginas_capitulo= "7">Nos vamos
@@ -90,7 +92,7 @@
         </capítulos>
         <indice>Índice del libro</indice>
         <sinopsis>Un viaje a Egipto</sinopsis>
-    </libros>
+    </libro>
 
     <revista revista_id="R" tipo_clase= "coche" num_paginas_revista= "35">
         <titulo> La revista de los coches</titulo>

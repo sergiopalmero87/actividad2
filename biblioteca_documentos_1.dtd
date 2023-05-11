@@ -1,55 +1,57 @@
 <!ELEMENT biblioteca_documentos (libro, revista, periodico)>
     
-    <!ELEMENT libro (titulo*, capitulos, indice*, sinopsis)>
-    <!ATTLIST libro libro_id CDATA "L-0000" >
-    <!ATTLIST libro tipo_clase (novela | infantil | didáctico) #REQUIRED >
-    <!ATTLIST libro num_paginas_libro CDATA >
+<!ELEMENT libro (titulo*, capitulos, indice*, sinopsis)>
+<!ATTLIST libro libro_id CDATA "L-0000" >
+<!ATTLIST libro tipo_clase (novela | infantil | didáctico) #REQUIRED >
+<!ATTLIST libro num_paginas_libro CDATA >
 
-    <!ELEMENT titulo (#PCDATA)>
+<!ELEMENT titulo (#PCDATA)>
 
-    <!ELEMENT capitulos (capitulo, contenido)>
+<!ELEMENT capitulos (capitulo, contenido)>
     
-    <!ELEMENT capitulo (titulo)>  
-    <!ATTLIST capitulo num_paginas_capitulo CDATA>  
+<!ELEMENT capitulo (titulo)>  
+<!ATTLIST capitulo num_paginas_capitulo CDATA>  
      
-    <!ELEMENT titulo (#PCDATA)>
+<!ELEMENT titulo (#PCDATA)>
 
-    <!ELEMENT contendio (#PCDATA)>
-    <!ATTLIST contenido enlace CDATA>
+<!ELEMENT contendio (#PCDATA)>
+<!ATTLIST contenido enlace CDATA>
 
-    <!ELEMENT indice (#PCDATA)>
-    <!ELEMENT sinopsis (#PCDATA)>
+<!ELEMENT indice (#PCDATA)>
+<!ELEMENT sinopsis (#PCDATA)>
 
-    <!ELEMENT revista (titulo, numero_revista, indice, seccion)>
-    <!ATTLIST revista revista_id ID "R" #REQUIRED>
-    <!ATTLIST revista tipo_clase (informática | corazón | coches | investigación | otras) #REQUIRED >
-    <!ATTLIST revista num_paginas_revista CDATA>
+<!ELEMENT revista (titulo, numero_revista, indice, seccion)>
+<!ATTLIST revista revista_id ID "R" #REQUIRED>
+<!ATTLIST revista tipo_clase (informática | corazón | coches | investigación | otras) #REQUIRED >
+<!ATTLIST revista num_paginas_revista CDATA>
 
-    <!ELEMENT titulo (#PCDATA)>
-    <!ELEMENT numero_revista (#PCDATA)>
-    <!ELEMENT indice (#PCDATA)>
+<!ELEMENT titulo (#PCDATA)>
+<!ELEMENT numero_revista (#PCDATA)>
+<!ELEMENT indice (#PCDATA)>
 
-    <!ELEMENT seccion (contenido)>
-    <!ATTLIST seccion num_paginas_seccion CDATA #REQUIRED>
+<!ELEMENT seccion (contenido)>
+<!ATTLIST seccion num_paginas_seccion CDATA #REQUIRED>
    
-    <!ELEMENT contenido (#PCDATA)>
-    <!ATTLIST contenido enlace CDATA>
+<!ELEMENT contenido (#PCDATA)>
+<!ATTLIST contenido enlace CDATA>
 
-    <!ELEMENT periodico (seccion, indice, contenido)>
-    <!ATTLIST periodico periodico_id ID "P-0000" #REQUIRED>
-    <!ATTLIST periodico tipo_clase (nacionales | internacionales) #REQUIRED>
-    <!ATTLIST periodico fecha_publicacion CDATA>
+<!ELEMENT periodico (seccion, indice, contenido)>
+<!ATTLIST periodico periodico_id ID "P-0000" #REQUIRED>
+<!ATTLIST periodico tipo_clase (nacionales | internacionales) #REQUIRED>
+<!ATTLIST periodico fecha_publicacion CDATA>
 
-    <!ELEMENT seccion (articulos)>
-    <!ATTLIST seccion tipo_seccion (economica | opinion | deportes | nacional | internacional) #REQUIRED>
+<!ELEMENT seccion (articulos)>
+<!ATTLIST seccion tipo_seccion (economica | opinion | deportes | nacional | internacional) #REQUIRED>
 
-    <!ELEMENT articulos (#PCDATA)>
-    <!ATTLIST articulos nombre_autor CDATA #REQUIRED>
+<!ELEMENT articulos (#PCDATA)>
+<!ATTLIST articulos nombre_autor CDATA #REQUIRED>
 
-    <!ELEMENT indice (#PCDATA)>
+<!ELEMENT indice (#PCDATA)>
 
-    <!ELEMENT contenido (#PCDATA)>
-    <!ATTLIST contenido enlace CDATA>
+<!ELEMENT contenido (#PCDATA)>
+<!ATTLIST contenido enlace CDATA>
+
+
 
 
    

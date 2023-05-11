@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>    
 <biblioteca_documentos xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-                        xsi:noNamespaceSchemaLocation= "biblioteca_documentos_2.xsd">
+                       xsi:noNamespaceSchemaLocation= "biblioteca_documentos_2.xsd">
 
     <Libro libro_id="L-0001" tipo_clase="novela" num_paginas="70">
         <titulo> Viaje a Egipto</titulo>
