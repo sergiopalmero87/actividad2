@@ -3,7 +3,7 @@
     <annotation>
         <documentation>Esquema que marca la estructura de una biblioteca de documentos</documentation>
     </annotation>
-
+<!-- No consigo añadir restricciones. Con complexType no me deja-->
     <element name="biblioteca_documentos">
         <complexType>
             <sequence>
