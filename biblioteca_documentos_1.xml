@@ -18,7 +18,7 @@ Aun asi, este interno tampoco parece conectarse para validar el xml. No consigo 
      
     <!ELEMENT titulo (#PCDATA)>
 
-    <!ELEMENT contendio (#PCDATA)>
+    <!ELEMENT contenido (#PCDATA)>
     <!ATTLIST contenido enlace CDATA>
 
     <!ELEMENT indice (#PCDATA)>
