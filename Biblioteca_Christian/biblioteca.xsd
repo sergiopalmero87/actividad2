@@ -1,11 +1,14 @@
 <?xml version="1.0"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<!-- Creamos el elemento biblioteca -->
     <xs:element name="biblioteca">
         <xs:complexType>
             <xs:sequence>
+            <!-- Creamos el elemento libro y le damos un número maximo sin límite para poder almacenar todos los libros que queramos -->
                 <xs:element name="libro" maxOccurs="unbounded">
                     <xs:complexType>
                         <xs:sequence>
+                        <!-- Creamos el elemento título que será de tipo string y que tendrá un máximo de 100 caracteres -->
                             <xs:element name="título">
                                  <xs:simpleType>
                                     <xs:restriction base="xs:string">
@@ -13,9 +16,11 @@
                                     </xs:restriction>
                                 </xs:simpleType>                                                               
                             </xs:element>
+                            <!-- Creamos el elemento capítulo con un número de ocurrencias sin límite -->
                             <xs:element name="capítulo" maxOccurs="unbounded">
                                 <xs:complexType>
                                     <xs:sequence>
+                                    <!-- Creamos el elemento del título del capítulo de tipo string y con un máximo de 35 caracteres -->
                                         <xs:element name="título_capítulo">
                                             <xs:simpleType>
                                                 <xs:restriction base="xs:string">
@@ -23,15 +28,22 @@
                                                 </xs:restriction>
                                             </xs:simpleType>                        
                                         </xs:element>
-                                        <xs:element name="contenido">                                            
+                                        <!-- Creamos el elemento contenido dentro de capítulo que contiene un atributo con el enlace a la información-->
+                                        <xs:element name="contenido">
+                                            <xs:complexType>
+                                                <xs:attribute name="enlace" type="xs:string" use="required"></xs:attribute>
+                                            </xs:complexType>                                            
                                         </xs:element>
                                     </xs:sequence>
+                                    <!-- Creamos los atributos del capítulo -->
                                     <xs:attribute name="páginas" type="xs:integer" use="required" ></xs:attribute>
                                 </xs:complexType>                            
                             </xs:element>
+                            <!-- Creamos los elementos índice y sinopsis -->
                             <xs:element name="índice" type="xs:string"></xs:element>
-                            <xs:element name="sinopsis"></xs:element>
+                            <xs:element name="sinopsis" type="xs:string"></xs:element>
                         </xs:sequence>
+                        <!-- Creamos los atributos del libro tal como se pide en el requerimiento -->
                             <xs:attribute name="id" use="required">
                                 <xs:simpleType>
                                     <xs:restriction base="xs:string">
@@ -56,9 +68,12 @@
                             </xs:attribute>
                     </xs:complexType>                
                 </xs:element>
+                <!-- Creamos el elemento revista sin límite de ocurrencias-->
                 <xs:element name="revista" maxOccurs="unbounded">
                     <xs:complexType>
                         <xs:sequence>
+                            <!-- Creamos los elementos titulo de revista de tipo string y con un máximo de 50 caracteres 
+                            y número de revista de tipo integer -->
                             <xs:element name="título_revista">
                                  <xs:simpleType>
                                     <xs:restriction base="xs:string">
@@ -72,10 +87,13 @@
                                     </xs:restriction>
                                 </xs:simpleType>
                             </xs:element>
+                            <!-- Creamos el elemento índice de revista de tipo string -->
                             <xs:element name="índice_revista" type="xs:string"></xs:element>
+                            <!-- Creamos el elemento sección de la revista con un número sin límite de ocurrencias -->
                             <xs:element name="sección_revista" maxOccurs="unbounded">
                                 <xs:complexType>
                                     <xs:sequence>
+                                    <!-- Creamos los elementos que van dentro de la sección con sus atributos -->
                                         <xs:element name="título_sección" type="xs:string"></xs:element>
                                         <xs:element name="contenido_revista">
                                             <xs:complexType>
@@ -88,6 +106,7 @@
                                 </xs:complexType>
                             </xs:element>                        
                         </xs:sequence>
+                        <!-- Creamos los atributos de la revista tal y como se pide en el requerimiento -->
                             <xs:attribute name="id" use="required">
                                 <xs:simpleType>
                                     <xs:restriction base="xs:string">
@@ -111,16 +130,18 @@
                                     <xs:restriction base="xs:integer">
                                      </xs:restriction>
                                 </xs:simpleType>
-                            </xs:attribute>
-                            
+                            </xs:attribute>                            
                     </xs:complexType>
                 </xs:element>
+                <!-- Creamos el elemento periódico sin límite de ocurrencias-->
                 <xs:element name="periódico" maxOccurs="unbounded">
                     <xs:complexType>
                         <xs:sequence>
+                        <!-- Creamos el elemento sección del periódico -->
                             <xs:element name="sección_periódico">
                                 <xs:complexType>
                                     <xs:sequence>
+                                    <!-- Creamos el elemento artículo y dentro de éste, el contenido con sus atributos -->
                                         <xs:element name="artículo">
                                             <xs:complexType>
                                                 <xs:sequence>
@@ -130,13 +151,14 @@
                                                         </xs:complexType>                                                    
                                                     </xs:element>
                                                 </xs:sequence>
+                                                <!-- Creamos los atributos del artículo -->
                                             <xs:attribute name="autor" use="required" type="xs:string"></xs:attribute>
                                             </xs:complexType>
-
                                         </xs:element>
                                     </xs:sequence>
-                                    <xs:attribute name="tipo_sección">
-                                        <xs:simpleType>
+                            <!-- Creamos los atributos de la sección del periódico-->
+                            <xs:attribute name="tipo_sección">
+                                <xs:simpleType>
                                     <xs:restriction base="xs:string">
                                         <xs:enumeration value="económica"></xs:enumeration>
                                         <xs:enumeration value="opinión"></xs:enumeration>
@@ -145,11 +167,13 @@
                                         <xs:enumeration value="internacional"></xs:enumeration>
                                     </xs:restriction>
                                 </xs:simpleType>
-                                    </xs:attribute>
+                            </xs:attribute>
                                 </xs:complexType>
                             </xs:element>
+                            <!-- Creamos el elelento del índice del periódico-->
                             <xs:element name="índice_periódico" type="xs:string"></xs:element>
                         </xs:sequence>
+                        <!-- Creamos los atributos del periódico tal y como se pide en el requerimiento-->
                         <xs:attribute name="id" use="required">
                                 <xs:simpleType>
                                     <xs:restriction base="xs:string">
