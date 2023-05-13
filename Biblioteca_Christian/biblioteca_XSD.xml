@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE biblioteca SYSTEM "biblioteca.dtd">
 
-<biblioteca>
-    <libro id="L0001" tipo_clase= "novela">
-        <título páginas="891">El Señor de los Anillos</título>
+<biblioteca xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+            xsi:noNamespaceSchemaLocation= "biblioteca.xsd">
+    <libro id="L0001" tipo_clase= "novela" páginas="891">
+        <título>El Señor de los Anillos</título>
         <capítulo páginas="16">
             <título_capítulo>Una reunión muy esperada</título_capítulo>
             <contenido enlace="enlace del capítulo"></contenido>
@@ -26,8 +26,8 @@
         Pero sólo con la ayuda de Aragorn conseguirán vencer a los Jinetes Negros y alcanzar el refugio de la Casa de Elrond en Rivendel.
         </sinopsis>    
     </libro>
-     <libro id="L0002" tipo_clase= "didáctico">
-        <título páginas="644">Código Limpio: Manual de estilo para el desarrollo ágil de software</título>
+     <libro id="L0002" tipo_clase= "didáctico" páginas="644">
+        <título> Código Limpio: Manual de estilo para el desarrollo ágil de software</título>
         <capítulo páginas="20">
             <título_capítulo>Código Limpio</título_capítulo>
             <contenido enlace="enlace del capítulo"></contenido>
@@ -52,53 +52,74 @@
         leemos y limpiamos código. Imprescindible para cualquier desarrollador, ingeniero de software, director de proyectos, jefe de equipo o analista de sistemas interesado en crear código de mejor calidad. ¡El libro que todo programador debe leer!</sinopsis>    
     </libro>
 
-    <revista id="R0001" tipo_clase="coches" número_páginas="56">
+    <revista id="R0001" tipo_clase="coches" páginas="56">
         <título_revista>Revista de coches</título_revista>
         <número_revista>12</número_revista>
         <índice_revista>Índice de la revista</índice_revista>
-        <seccion_revista páginas="8">
+        <sección_revista páginas="8">
             <título_sección>Prueba de la semana</título_sección>
             <contenido_revista enlace="enlace a la información"></contenido_revista>    
-        </seccion_revista>
-        <seccion_revista páginas="5">
+        </sección_revista>
+        <sección_revista páginas="5">
             <título_sección>Reportaje Mercedes G63 AMG</título_sección>
             <contenido_revista enlace="enlace a la información"></contenido_revista>    
-        </seccion_revista>
-        <seccion_revista páginas="3">
+        </sección_revista>
+        <sección_revista páginas="3">
             <título_sección>Mantenimiento mensual</título_sección>
             <contenido_revista enlace="enlace a la información"></contenido_revista>    
-        </seccion_revista>
-        <seccion_revista páginas="2">
+        </sección_revista>
+        <sección_revista páginas="2">
             <título_sección>Publireportaje</título_sección>
             <contenido_revista enlace="enlace a la información"></contenido_revista>    
-        </seccion_revista>
+        </sección_revista>
     </revista>
 
-    <revista id="R0002" tipo_clase="informática" número_páginas="40">
+    <revista id="R0002" tipo_clase="informática" páginas="40">
         <título_revista>Revista de informática</título_revista>
         <número_revista>37</número_revista>
         <índice_revista>Índice de la revista</índice_revista>
-        <seccion_revista páginas="3">
+        <sección_revista páginas="3">
             <título_sección>Placas base ASUS explotan</título_sección>
             <contenido_revista enlace="enlace a la información"></contenido_revista>    
-        </seccion_revista>
-        <seccion_revista páginas="3">
+        </sección_revista>
+        <sección_revista páginas="3">
             <título_sección>Nvidia no escucha a los consumidores</título_sección>
             <contenido_revista enlace="enlace a la información"></contenido_revista>    
-        </seccion_revista>
-        <seccion_revista páginas="4">
+        </sección_revista>
+        <sección_revista páginas="4">
             <título_sección>Beta abierta de Diablo IV este fin de semana</título_sección>
             <contenido_revista enlace="enlace a la información"></contenido_revista>    
-        </seccion_revista>
-        <seccion_revista páginas="2">
+        </sección_revista>
+        <sección_revista páginas="2">
             <título_sección>Publireportaje</título_sección>
             <contenido_revista enlace="enlace a la información"></contenido_revista>    
-        </seccion_revista>
+        </sección_revista>
     </revista>
 
-    <periódico>
-    
-    </períodico>
+    <periódico id="P0001" tipo_clase="nacional" fecha_publicación="2023-05-10">
+        <sección_periódico tipo_sección="económica">
+            <artículo autor="Federico">
+                <contenido_periódico información="enlace a la información"></contenido_periódico>
+            </artículo>
+        </sección_periódico>
+        <índice_periódico>Índice del periódico</índice_periódico>    
+    </periódico>
 
+    <periódico id="P0002" tipo_clase="nacional" fecha_publicación="2023-10-05">
+        <sección_periódico tipo_sección="deportes">
+            <artículo autor="Alfgredo Relaño">
+                <contenido_periódico información="enlace a la información"></contenido_periódico>
+            </artículo>
+        </sección_periódico>
+        <índice_periódico>Índice del periódico</índice_periódico>    
+    </periódico>
 
+    <periódico id="P0003" tipo_clase="internacional" fecha_publicación="2023-05-09">
+        <sección_periódico tipo_sección="económica">
+            <artículo autor="Marc Vidal">
+                <contenido_periódico información="enlace a la información"></contenido_periódico>
+            </artículo>
+        </sección_periódico>
+        <índice_periódico>Índice del periódico</índice_periódico>    
+    </periódico>
 </biblioteca>

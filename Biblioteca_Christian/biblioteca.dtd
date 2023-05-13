@@ -3,14 +3,12 @@
 <!ELEMENT libro (título, capítulo+, índice, sinopsis)>
 <!ATTLIST libro id ID #REQUIRED>
 <!ATTLIST libro tipo_clase (novela | infantil | didáctico) #REQUIRED >
+<!ATTLIST libro páginas CDATA #REQUIRED>
 
 <!ELEMENT título (#PCDATA)>
-<!ATTLIST título páginas CDATA #REQUIRED>
-
 <!ELEMENT capítulo (título_capítulo, contenido)>
 <!ATTLIST capítulo páginas CDATA #REQUIRED>
 <!ATTLIST contenido enlace CDATA #REQUIRED>
-
 <!ELEMENT título_capítulo (#PCDATA)>
 <!ELEMENT contenido EMPTY>
 <!ELEMENT índice (#PCDATA)>
@@ -30,3 +28,18 @@
 
 <!ATTLIST seccion_revista páginas CDATA #REQUIRED >
 <!ATTLIST contenido_revista enlace CDATA #REQUIRED >
+
+<!ELEMENT periódico (sección_periódico, índice_periódico)>
+<!ATTLIST periódico id ID #REQUIRED>
+<!ATTLIST periódico tipo_clase (nacional | internacional) #REQUIRED >
+<!ATTLIST periódico fecha_publicación CDATA #REQUIRED>
+
+<!ELEMENT índice_periódico (#PCDATA)>
+<!ELEMENT sección_periódico (artículo+)>
+<!ATTLIST sección_periódico  tipo_sección (económica | opinión | deportes | nacional | internacional) #REQUIRED>
+
+<!ELEMENT artículo (contenido_periódico)>
+<!ATTLIST artículo autor CDATA #REQUIRED>
+
+<!ELEMENT contenido_periódico EMPTY>
+<!ATTLIST contenido_periódico información CDATA #REQUIRED>
