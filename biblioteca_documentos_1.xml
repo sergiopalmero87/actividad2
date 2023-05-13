@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Hago dtd interno porque externo no consigo que se conecte. Subo a gitihub también el externo para que quede constancia.
 Aun asi, este interno tampoco parece conectarse para validar el xml. No consigo ver el fallo -->
+
+<!-- DOCTYPE biblioteca_documentos SYSTEM "biblioteca_documentos.dtd"-->
+
+
 <!DOCTYPE biblioteca_documentos [
     <!ELEMENT biblioteca_documentos (libro+, revista+, periodico+)>
     

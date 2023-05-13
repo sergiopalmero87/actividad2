@@ -1,10 +1,13 @@
+<!-- Creamos elemento biblioteca-->
 <!ELEMENT biblioteca_documentos (libro, revista, periodico)>
-    
+
+ <!-- Creamos elemento libro con atributos-->   
 <!ELEMENT libro (titulo*, capitulos, indice*, sinopsis)>
 <!ATTLIST libro libro_id CDATA "L-0000" >
 <!ATTLIST libro tipo_clase (novela | infantil | didáctico) #REQUIRED >
 <!ATTLIST libro num_paginas_libro CDATA >
 
+<!-- Creamos cada elemento que hay dentro de libro y sus atributos. Añadimos alguna restricción como por ejemplo #REQUIRED-->
 <!ELEMENT titulo (#PCDATA)>
 
 <!ELEMENT capitulos (capitulo, contenido)>
@@ -20,11 +23,13 @@
 <!ELEMENT indice (#PCDATA)>
 <!ELEMENT sinopsis (#PCDATA)>
 
+<!-- Creamos elemento revista con sus atributos-->
 <!ELEMENT revista (titulo, numero_revista, indice, seccion)>
 <!ATTLIST revista revista_id ID "R" #REQUIRED>
 <!ATTLIST revista tipo_clase (informática | corazón | coches | investigación | otras) #REQUIRED >
 <!ATTLIST revista num_paginas_revista CDATA>
 
+<!-- Creamos cada elemento que hay dentro de revista-->
 <!ELEMENT titulo (#PCDATA)>
 <!ELEMENT numero_revista (#PCDATA)>
 <!ELEMENT indice (#PCDATA)>
@@ -35,11 +40,13 @@
 <!ELEMENT contenido (#PCDATA)>
 <!ATTLIST contenido enlace CDATA>
 
+<!-- Creamos elemento periódico con sus atributos-->
 <!ELEMENT periodico (seccion, indice, contenido)>
 <!ATTLIST periodico periodico_id ID "P-0000" #REQUIRED>
 <!ATTLIST periodico tipo_clase (nacionales | internacionales) #REQUIRED>
 <!ATTLIST periodico fecha_publicacion CDATA>
 
+<!-- Creamos cada elemento que hay dentro de periódico-->
 <!ELEMENT seccion (articulos)>
 <!ATTLIST seccion tipo_seccion (economica | opinion | deportes | nacional | internacional) #REQUIRED>
 

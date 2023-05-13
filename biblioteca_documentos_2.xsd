@@ -3,10 +3,15 @@
     <annotation>
         <documentation>Esquema que marca la estructura de una biblioteca de documentos</documentation>
     </annotation>
-<!-- No consigo añadir restricciones. Con complexType no me deja-->
+
+<!-- Creamos elemento biblioteca_documentos-->
     <element name="biblioteca_documentos">
         <complexType>
+
+        <!-- Creamos la secuencia con los elementos que hay dentro: Libro, Revista, Periódico-->
             <sequence>
+
+            <!-- Creamos elemento libro con todos sus subelementos, atributos y restricciones-->
                 <element name="Libro" minOccurs="1" maxOccurs="unbounded">
                     <complexType>
                         <sequence>
@@ -39,18 +44,32 @@
                             <element name="indice" type="string"></element>
                             <element name="sinopsis" type="string"></element>
                         </sequence>
-                        <attribute name="libro_id" type="string" default="L-0000"></attribute>
-                        <attribute name="tipo_clase" type="string" use="required"></attribute>
-                        <attribute name="num_paginas" type="integer"></attribute>
+                        <attribute name="libro_id">
+                            <simpleType>
+                                <restriction base="string"><pattern value="[L][-][0-9]{4}"></pattern></restriction>
+                            </simpleType>
+                        </attribute>
+                        <attribute name="tipo_clase" use="required">
+                            <simpleType>
+                                <restriction base="string">
+                                    <enumeration value="novela"></enumeration>
+                                    <enumeration value="didáctico"></enumeration>
+                                    <enumeration value="infantil"></enumeration>
+                                </restriction>
+                            </simpleType>
+                        </attribute>
+                        <attribute name="num_paginas" type="integer" use="required"></attribute>
                     </complexType>
                 </element>
+
+                <!-- Creamos elemento revista con sus subelementos, atributos y restricciones-->
                 <element name="revista" minOccurs="1" maxOccurs="unbounded">
                     <complexType>
                         <sequence>
                             <element name="titulo">
                                 <simpleType>
                                     <restriction base="string"> 
-                                        <maxLength value="15"></maxLength>
+                                        <maxLength value="25"></maxLength>
                                     </restriction>
                                 </simpleType>
                             </element>
@@ -59,6 +78,7 @@
                             <element name="seccion" >
                                 <complexType>
                                     <sequence>
+                                        <element name="titulo_seccion"></element>
                                         <element name="contenido">
                                             <complexType>
                                                 <attribute name="enlace" type="string"></attribute>
@@ -69,11 +89,29 @@
                                 </complexType>
                             </element>
                         </sequence>
-                        <attribute name="revista_id" type="string" fixed="R" use="required"></attribute>
-                        <attribute name="tipo_clase" type="string"></attribute>
-                        <attribute name="numero_paginas" type="integer"></attribute>
+                        <attribute name="revista_id" use="required">
+                            <simpleType>
+                                <restriction base="string">
+                                    <pattern value="[R][-][0-9]{4}"></pattern>
+                                </restriction>
+                            </simpleType>   
+                        </attribute>
+                        <attribute name="tipo_clase" use="required">
+                            <simpleType>
+                                <restriction base="string">
+                                    <enumeration value="informática"></enumeration>
+                                    <enumeration value="corazón"></enumeration>
+                                    <enumeration value="coches"></enumeration>
+                                    <enumeration value="investigación"></enumeration>
+                                    <enumeration value="otras"></enumeration>
+                                </restriction>
+                            </simpleType>
+                        </attribute>
+                        <attribute name="numero_paginas" type="integer" use="required"></attribute>
                     </complexType>
                 </element>
+
+                <!-- Creamos elemento periódico con sus subelementos, atributos y restricciones-->
                 <element name="periodico" minOccurs="1" maxOccurs="unbounded">
                     <complexType>
                         <sequence>
@@ -86,7 +124,16 @@
                                             </complexType>
                                         </element>
                                     </sequence>
-                                    <attribute name="tipo_seccion" type="string" use="required"></attribute>
+                                    <attribute name="tipo_seccion" use="required">
+                                        <simpleType>
+                                            <restriction base="string">
+                                                <pattern value="economia"></pattern>
+                                                <pattern value="deportes"></pattern>
+                                                <pattern value="nacional"></pattern>
+                                                <pattern value="internacional"></pattern>
+                                            </restriction>
+                                        </simpleType>   
+                                    </attribute>
                                 </complexType>
                             </element>
                             <element name="indice" type="string"></element>
@@ -96,8 +143,22 @@
                                 </complexType>  
                             </element>
                         </sequence>
-                        <attribute name="periodico_id" type="string" default="P-0000"></attribute>
-                        <attribute name="tipo_clase" type="string" use="required"></attribute>
+                        <attribute name="periodico_id" use="required">
+                            <simpleType>
+                                <restriction base="string">
+                                    <pattern value="[P][-][0-9]{4}"></pattern>
+                                </restriction>
+                            </simpleType>
+                        </attribute>
+                        <attribute name="tipo_clase" use="required">
+                            <simpleType>
+                                <restriction base="string">
+                                    <enumeration value="nacional"></enumeration>
+                                    <enumeration value="internacional"></enumeration>
+                                </restriction>
+                            </simpleType>
+                        </attribute>
+                        <attribute name="fecha_publicacion" type="date" use="required"></attribute>
                     </complexType>
                 </element>
             </sequence>
